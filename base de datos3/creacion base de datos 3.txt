@@ -1,0 +1,138 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Instale la versión más reciente de PowerShell para obtener nuevas características y mejoras. https://aka.ms/PSWindows
+
+PS C:\Users\Jaime> mysql -u root -p
+Enter password: *********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 13
+Server version: 9.2.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database creditcardsdb;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use creditcardsdb;
+Database changed
+mysql> create table creditcardsexcel(
+    -> prueba int);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> alter table creditcardsexcel CardTypeFullName varchar(150) not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CardTypeFullName varchar(150) not null' at line 1
+mysql> alter table creditcardsexcel add CardTypeFullName varchar(150) not null;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table creditcardsexcel add IssuingBank varchar(100) not null;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table creditcardsexcel add CardNumber int not null;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table creditcardsexcel add CardHoldersName varchar(150) not null;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table creditcardsexcel add CVV/CVV2 int not null;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/CVV2 int not null' at line 1
+mysql> alter table creditcardsexcel add CVVorCVV2 int not null;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table creditcardsexcel add IssueDate int not null;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table creditcardsexcel add ExpiryDate int not null;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table creditcardsexcel add BillingDate int not null;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table creditcardsexcel add CardPIN int not null;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table creditcardsexcel add CreditLimit int not null;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> show tables;
++-------------------------+
+| Tables_in_creditcardsdb |
++-------------------------+
+| creditcardsexcel        |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> desc creditcardsexcel;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| prueba           | int          | YES  |     | NULL    |       |
+| CardTypeFullName | varchar(150) | NO   |     | NULL    |       |
+| IssuingBank      | varchar(100) | NO   |     | NULL    |       |
+| CardNumber       | int          | NO   |     | NULL    |       |
+| CardHoldersName  | varchar(150) | NO   |     | NULL    |       |
+| CVVorCVV2        | int          | NO   |     | NULL    |       |
+| IssueDate        | int          | NO   |     | NULL    |       |
+| ExpiryDate       | int          | NO   |     | NULL    |       |
+| BillingDate      | int          | NO   |     | NULL    |       |
+| CardPIN          | int          | NO   |     | NULL    |       |
+| CreditLimit      | int          | NO   |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+mysql> alter table creditcardsexcel
+    -> drop column prueba;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc creditcardsexcel;
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| CardTypeFullName | varchar(150) | NO   |     | NULL    |       |
+| IssuingBank      | varchar(100) | NO   |     | NULL    |       |
+| CardNumber       | int          | NO   |     | NULL    |       |
+| CardHoldersName  | varchar(150) | NO   |     | NULL    |       |
+| CVVorCVV2        | int          | NO   |     | NULL    |       |
+| IssueDate        | int          | NO   |     | NULL    |       |
+| ExpiryDate       | int          | NO   |     | NULL    |       |
+| BillingDate      | int          | NO   |     | NULL    |       |
+| CardPIN          | int          | NO   |     | NULL    |       |
+| CreditLimit      | int          | NO   |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+10 rows in set (0.00 sec)
+
+mysql> create table tabladeTarjetas(
+    -> CardNumber int not null,
+    -> CardTypeFullName varchar(150) not null,
+    -> IssuingBank varchar(100) not null,
+    -> CardHoldersName  varchar(150) not null,
+    -> IssueDate int not null,
+    -> ExpiryDate int not null,
+    -> BillingDate int not null,
+    -> CVVorCVV2 int not null,
+    -> CardPIN int not null);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> create table tabladeTiposdeTarjeta(
+    -> CardTypeFullName varchar(150) not null,
+    -> CreditLimit int not null);
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
