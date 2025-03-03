@@ -1,0 +1,80 @@
+
+##En excel cambiar todos los nombres como Customer Name y juntarlos para poder insertarlos y 
+no tener errores al generar los insert ejemplo: (Customer Name=CustomerName) ##sin espacios
+
+RowID int key auto_increment,
+OrderID varchar(50) not null,
+OrderDate varchar(50) not null,
+ShipDate varchar(50) not null,
+ShipMode varchar(50) not null,
+CustomerID varchar(50) not null,
+CustomerName varchar(50) not null,
+Segment varchar(50) not null,
+Country varchar(50) not null,
+City varchar(50) not null,
+State varchar(50) not null,
+PostalCode int not null,
+Region varchar(50) not null,
+ProductID varchar(50) not null,
+Category varchar(50) not null,
+SubCategory varchar(50) not null,
+ProductName varchar(50) not null,
+Sales decimal(10,5),
+Quantity int,
+Discount decimal(5,2),
+Profit decimal(10,5),
+
+insert into ordersExcel values();
+
+EmpID int not null,
+NamePrefix	varchar(50) not null,
+FirstName	varchar(50) not null,
+MiddleInitial varchar(50) not null,
+LastName varchar(50) not null,	
+Gender varchar(50) not null,	
+EMail varchar(100) not null,	
+FathersName varchar(100) not null,	
+MothersName varchar(100) not null,	
+MothersMaidenName varchar(50) not null,	
+DateofBirth varchar(50) not null,	
+TimeofBirth varchar(50) not null, 	
+AgeinYrs varchar(50) not null,
+WeightinKgs int not null,	
+DateofJoining varchar(50) not null, 	
+QuarterofJoining varchar(50) not null,	
+HalfofJoining varchar(50) not null,	
+YearofJoining int not null, 	
+MonthofJoining int not null,	
+MonthNameofJoining varchar(50) not null,	
+ShortMonth varchar(50) not null,	
+DayofJoining int not null,	
+DOWofJoining varchar(50) not null,	
+ShortDOW varchar(50) not null, 	
+AgeinCompanyinYears varchar(50) not null,	
+Salary int not null, 	
+LastHike varchar(50)not null, 	
+SSN varchar(50) not null,
+PhoneNo varchar(50) not null, 	
+PlaceName varchar(50) not null, 	
+County varchar(50) not null,	
+City varchar(50) not null,	
+State varchar(50) not null,	
+Zip int not null,	
+Region varchar(50) not null,	
+UserName varchar(50) not null,	
+Password varchar(150) not null,     
+
+
+
+
+
+CardTypeFullName varchar(150) not null,         A1
+IssuingBank varchar(100) not null,              B1
+CardNumber varchar(20) not null,                        C1
+CardHoldersName	varchar(150) not null,          D1
+CVVorCVV2 int not null,	                        E1
+IssueDate int not null,	                        F1
+ExpiryDate int not null,                        G1
+BillingDate int not null,	                    H1
+CardPIN int not null,	                        I1
+CreditLimit int not null,                       J1
